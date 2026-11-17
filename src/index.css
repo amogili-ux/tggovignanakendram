@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-charcoal-800 leading-[1.5];
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif leading-[1.2] text-earth-500;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-forest-600 px-6 py-3 text-base font-semibold text-ivory-50 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-forest-700 hover:shadow-md focus:outline-none focus-visible:ring-4 focus-visible:ring-forest-300;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-saffron-500 px-6 py-3 text-base font-semibold text-charcoal-800 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-saffron-300 hover:shadow-md focus:outline-none focus-visible:ring-4 focus-visible:ring-saffron-300;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-forest-600 bg-transparent px-6 py-3 text-base font-semibold text-forest-600 transition duration-300 hover:-translate-y-0.5 hover:bg-forest-600 hover:text-ivory-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-forest-300;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ivory-300 bg-white shadow-sm transition duration-300;
+  }
+
+  .field-input {
+    @apply w-full rounded-xl border border-ivory-300 bg-white px-4 py-3 text-base text-charcoal-800 placeholder:text-charcoal-500 transition focus:border-forest-500 focus:outline-none focus:ring-4 focus:ring-forest-100;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
